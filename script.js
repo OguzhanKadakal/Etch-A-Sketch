@@ -34,14 +34,19 @@ function createNewPad(gridSize) {
     container.appendChild(square); //Add new element to the container div
   }
 
-  //Add hover effect to squares
   const squareElements = document.querySelectorAll(".grid-square");
   squareElements.forEach((square) => {
+    let hoverCount = 0;
     square.addEventListener("mouseover", () => {
-      square.style.backgroundColor = "black";
+      if (hoverCount < 10) {
+        hoverCount++;
+        const grayValue = Math.floor((hoverCount / 10) * 255); // Darken with each interaction
+        square.style.backgroundColor = `rgb(${255 - grayValue}, ${255 - grayValue}, ${255 - grayValue})`;
+      }
     });
   });
 }
+
 let gridSize = 16;
 createNewPad(gridSize);
 
