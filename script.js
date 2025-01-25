@@ -19,3 +19,11 @@ for (let i = 0; i < totalSquares; i++) {
     container.appendChild(square); //Add new element to the container div
 }
 
+//Add hover effect to squares
+const squareElements = document.querySelectorAll(".grid-square");
+squareElements.forEach(square => {
+    square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "red";
+    });
+});
+
