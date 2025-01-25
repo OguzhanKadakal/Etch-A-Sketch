@@ -9,7 +9,7 @@ rootElement.appendChild(titleElement);
 
 // Create the button
 const buttonElement = document.createElement("button");
-buttonElement.classList.add("btn-start");
+buttonElement.classList.add("btn");
 buttonElement.textContent = "Create New Pad";
 rootElement.appendChild(buttonElement);
 
@@ -47,11 +47,26 @@ createNewPad(gridSize);
 
 // Add click event to get user input for new pad
 buttonElement.addEventListener("click", () => {
-  let userInput = prompt("Enter a number! (max 100)");
-  if (userInput > 0 && userInput < 100) {
+  let userInput = prompt("Enter a Number Between 0 & 100");
+  if (userInput > 0 && userInput < 101) {
     gridSize = userInput;
     createNewPad(gridSize);
   } else {
     alert("Enter a valid number!");
   }
+});
+
+// Create clear button
+const clearButtonElement = document.createElement("button");
+clearButtonElement.classList.add("btn");
+clearButtonElement.id = "clear"
+clearButtonElement.textContent = "Clear"
+rootElement.appendChild(clearButtonElement);
+
+// Clear function
+document.querySelector("#clear").addEventListener("click", () => {
+  const squares = document.querySelectorAll(".grid-square");
+  squares.forEach((square) => {
+    square.style.backgroundColor = "white";
+  });
 });
