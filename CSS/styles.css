@@ -25,12 +25,11 @@ body {
 
 .title {
     font-style: italic;
-    font-size: 3rem;
 }
 
 .btn{
     padding: 0.5rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .grid-square {
