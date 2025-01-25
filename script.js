@@ -1,6 +1,12 @@
 //Select the root element.
 const rootElement = document.querySelector("#root");
 
+//Created the title
+const titleElement = document.createElement("h1");
+titleElement.classList.add("title");
+titleElement.textContent = "Etch-a-Sketch";
+rootElement.appendChild(titleElement);
+
 //Create a new div and added container class and appended to the root
 const containerDiv = document.createElement("div");
 containerDiv.classList.add("container");
@@ -23,7 +29,7 @@ for (let i = 0; i < totalSquares; i++) {
 const squareElements = document.querySelectorAll(".grid-square");
 squareElements.forEach(square => {
     square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "red";
+        square.style.backgroundColor = "black";
     });
 });
 
